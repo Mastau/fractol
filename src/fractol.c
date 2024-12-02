@@ -6,7 +6,7 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:41:18 by thomarna          #+#    #+#             */
-/*   Updated: 2024/12/02 20:07:37 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/12/02 20:32:28 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,20 @@ int wheel_hook(int event, void* param)
     return (0);
 }
 
-void message()
+int	message()
 {
 	ft_printf("\\o/ Fractol \\o/\n");
 	ft_printf("Usage:\n");
 	ft_printf("- Mandelbrot: ./fractol mandel\n");
 	ft_printf("- Julia: ./fractol julia <arg1> <arg2>\n");
+	return (0);
+}
+
+void	exit_fractal(t_fractal *fractal)
+{
+	mlx_destroy_window(fractal->mlx.con, fractal->mlx.win);
+	mlx_destroy_display(fractal->mlx.con);
+	free(fractal);
 }
 
 int	main(int ac, char **av)
@@ -81,10 +89,7 @@ int	main(int ac, char **av)
 	t_mlx mlx;
 
 	if (ac < 2)
-	{
-		message();
-		return (0);
-	}
+		return (message());
 	fractal = malloc(sizeof(t_fractal));
 	if (fractal == NULL)
 		return (0);
@@ -96,9 +101,11 @@ int	main(int ac, char **av)
 	mlx_on_event(mlx.con, mlx.win, MLX_WINDOW_EVENT, window_hook, fractal);
 	mlx_on_event(mlx.con, mlx.win, MLX_MOUSEWHEEL, wheel_hook, fractal);
 	mlx_on_event(mlx.con, mlx.win, MLX_KEYDOWN, key_hook, fractal);
-	parsing(fractal, av);
+	if (parsing(fractal, av))
+	{
+		exit_fractal(fractal);
+		return (message());
+	}
 	mlx_loop(mlx.con);
-	mlx_destroy_window(mlx.con, mlx.win);
-	mlx_destroy_display(mlx.con);
-	free(fractal);
+	exit_fractal(fractal);
 }

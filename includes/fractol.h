@@ -6,7 +6,7 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:41:58 by thomarna          #+#    #+#             */
-/*   Updated: 2024/12/02 20:10:16 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/12/02 20:27:43 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ typedef struct s_fractal
 	double	ratio;
 }			t_fractal;
 
-void		parsing(t_fractal *fractal, char **av);
+int			parsing(t_fractal *fractal, char **av);
 void		calculate_mandel(t_fractal *fractal);
 void		calculate_julia(t_fractal *fractal);
-void		message();
+int			message(void);
 #endif
