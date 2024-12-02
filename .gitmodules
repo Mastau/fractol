@@ -1,0 +1,6 @@
+[submodule "lib/libft"]
+	path = lib/libft
+	url = https://github.com/Mastau/libft
+[submodule "lib/MacroLibX"]
+	path = lib/MacroLibX
+	url = git@github.com:seekrs/MacroLibX.git

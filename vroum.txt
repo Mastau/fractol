@@ -1,0 +1,11 @@
+Fractol
+
+Mandelbrot & julia without param
+
+Julia with param ?
+
+Zoom in & out apply zoom in / out
+
+few colors : black & white ?
+
+Graphic : (On reprend fdf)
