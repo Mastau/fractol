@@ -10,6 +10,7 @@ SRCS = src/fractol.c \
 	   src/parsing.c \
 	   src/mandel.c \
 	   src/julia.c \
+	   src/hooks.c \
 
 all: $(NAME)
 

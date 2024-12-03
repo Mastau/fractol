@@ -6,7 +6,7 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:41:58 by thomarna          #+#    #+#             */
-/*   Updated: 2024/12/02 20:27:43 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/12/03 15:06:38 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "libft.h"
 # include "mlx.h"
-# include <SDL2/SDL_mouse.h>
-# include <float.h>
 
 # ifndef WIDTH
 #  define WIDTH 1920
@@ -56,4 +54,8 @@ int			parsing(t_fractal *fractal, char **av);
 void		calculate_mandel(t_fractal *fractal);
 void		calculate_julia(t_fractal *fractal);
 int			message(void);
+void		init_fractal(t_fractal *fractal);
+int			wheel_hook(int event, void *param);
+int			window_hook(int event, void *param);
+int			key_hook(int key, void *param);
 #endif

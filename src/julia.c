@@ -17,9 +17,11 @@ void	julia(t_fractal *fractal)
 	int		i;
 	double	x;
 
-	i = 0;	
-	fractal->zx = ((fractal->x - (double)WIDTH / 2) / (double)WIDTH * fractal->zoom * 3.5);
-	fractal->zy = ((fractal->y - (double)HEIGHT / 2) / (double)HEIGHT * fractal->zoom * 3.5 / fractal->ratio); 
+	i = 0;
+	fractal->zx = ((fractal->x - (double)WIDTH / 2) / (double)WIDTH
+			* fractal->zoom * 3.5);
+	fractal->zy = ((fractal->y - (double)HEIGHT / 2) / (double)HEIGHT
+			* fractal->zoom * 3.5 / fractal->ratio);
 	while (++i < fractal->max)
 	{
 		x = fractal->zx;
