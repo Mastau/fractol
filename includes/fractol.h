@@ -6,7 +6,7 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:41:58 by thomarna          #+#    #+#             */
-/*   Updated: 2024/12/03 15:06:38 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/12/03 16:39:32 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include "mlx.h"
 
 # ifndef WIDTH
-#  define WIDTH 1920
+#  define WIDTH 600
 # endif
 
 # ifndef HEIGHT
-#  define HEIGHT 1080
+#  define HEIGHT 600
 # endif
 
 # ifndef DOUBLE_MAX

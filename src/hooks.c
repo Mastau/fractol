@@ -6,7 +6,7 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:49:40 by thomarna          #+#    #+#             */
-/*   Updated: 2024/12/03 15:07:59 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/12/03 16:25:54 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,6 @@ int	wheel_hook(int event, void *param)
 		fractal->zoom /= 1.10;
 	if (event == 2)
 		fractal->zoom *= 1.10;
-	if (fractal->zoom < 0.1)
-		fractal->zoom = 0.1;
-	if (fractal->zoom > 10.0)
-		fractal->zoom = 10.0;
 	mlx_destroy_image(fractal->mlx.con, fractal->mlx.img);
 	redraw(fractal);
 	return (0);

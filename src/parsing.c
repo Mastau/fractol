@@ -6,24 +6,11 @@
 /*   By: thomarna <thomarna@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:47:12 by thomarna          #+#    #+#             */
-/*   Updated: 2024/12/03 14:45:39 by thomarna         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:47:24 by thomarna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-static char	*ft_sanitize(char **av)
-{
-	char	**start;
-
-	start = ++av;
-	while (*(av + 1))
-	{
-		(*av)[ft_strlen(*av)] = ' ';
-		av++;
-	}
-	return (*start);
-}
 
 void	init_fractal(t_fractal *fractal)
 {
@@ -53,7 +40,7 @@ int	parsing(t_fractal *fractal, char **av)
 {
 	char	**split;
 
-	fractal->max = 500;
+	fractal->max = 300;
 	fractal->ratio = (double)WIDTH / HEIGHT;
 	split = ft_split(ft_sanitize(av), ' ');
 	if (split[0] == NULL)
